@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { profile, socials, stats } from '../data/portfolioData'
+import { SocialIcon } from './SocialIcons'
 
 export function HeroSection() {
   const [roleIndex, setRoleIndex] = useState(0)
@@ -29,15 +30,7 @@ export function HeroSection() {
     return () => clearTimeout(timeout)
   }, [text, isDeleting, roleIndex])
 
-  const getSocialIcon = (icon: string) => {
-    switch (icon) {
-      case 'github': return '📦'
-      case 'linkedin': return '💼'
-      case 'twitter': return '🐦'
-      case 'instagram': return '📸'
-      default: return '🔗'
-    }
-  }
+
 
   return (
     <section className="hero section" id="hero">
@@ -80,7 +73,7 @@ export function HeroSection() {
                   className="hero-social-link"
                   title={social.label}
                 >
-                  {getSocialIcon(social.icon)}
+                  <SocialIcon name={social.icon} />
                 </a>
               ))}
             </div>

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { profile, socials } from '../data/portfolioData'
+import { SocialIcon } from './SocialIcons'
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -27,15 +28,7 @@ export function ContactSection() {
     setSubmitted(true)
   }
 
-  const getSocialIcon = (icon: string) => {
-    switch (icon) {
-      case 'github': return '📦'
-      case 'linkedin': return '💼'
-      case 'twitter': return '🐦'
-      case 'instagram': return '📸'
-      default: return '🔗'
-    }
-  }
+
 
   return (
     <section className="section" id="contact">
@@ -95,7 +88,7 @@ export function ContactSection() {
                   className="contact-social-btn glass-card"
                   title={social.label}
                 >
-                  {getSocialIcon(social.icon)}
+                  <SocialIcon name={social.icon} />
                 </a>
               ))}
             </div>

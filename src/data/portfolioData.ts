@@ -57,10 +57,11 @@ export const profile = {
   phone: '+91 9045744076',
   avatar: '/src/assets/images/face.png',
   intro:
-    'I build modern, responsive web applications with clean code and pixel-perfect design. BCA graduate passionate about creating digital experiences that make a difference.',
+    'I build modern, responsive web applications with clean code and pixel-perfect design. I am passionate about creating digital experiences that make a difference.',
   about: [
-    "I'm a recent Bachelor of Computer Applications graduate who thrives on turning ideas into polished digital products. With a strong foundation in frontend development and growing full-stack capabilities, I craft applications that are both beautiful and functional.",
-    "My approach combines design thinking with practical engineering. I focus on clean architecture, reusable components, and user experiences that feel intuitive. Whether it's a dynamic SPA, a business dashboard, or an API-driven application — I bring the same attention to detail and code quality.",
+    "I’m a dedicated Full Stack Developer passionate about building modern, responsive, and user-focused web applications.",
+    "I enjoy turning ideas into real, functional products through clean code and thoughtful design. With hands-on experience in technologies like HTML, CSS, JavaScript, React, Next.js, Firebase, and Node.js.",
+    " I focus on creating scalable solutions that deliver both performance and great user experience.",
   ],
   resumeUrl: '#',
   githubUsername: 'Deepanshu9045',
@@ -147,17 +148,19 @@ export const projects: Project[] = [
     title: 'Zest CRM',
     description:
       'A full-featured CRM dashboard with drag-and-drop pipelines, invoice generation, Google OAuth, and real-time Firestore data sync.',
-    image: '/images/pro-1.png',
+    image: '/src/assets/images/zestcrm.png',
     tech: ['Next.js', 'TypeScript', 'Firebase', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/Deepanshu9045',
+    liveUrl: 'https://zestcrm.vercel.app/',
+    githubUrl: 'https://github.com/Deepanshu9045/ZestCRM',
   },
   {
-    title: 'Amazon Clone',
+    title: 'React Tutorial',
     description:
-      'A commerce-inspired UI project focused on familiar layout patterns, auth flows, and responsive product sections.',
-    image: '/images/pro-1.png',
+      'A react tutorial project focused on learning react and its features. This project is a work in progress.',
+    image: '/src/assets/images/react-tutorial.png',
     tech: ['React', 'CSS', 'Firebase', 'Node.js'],
-    githubUrl: '#',
+    liveUrl: 'https://react-tutorial-deepanshu9045.vercel.app/',
+    githubUrl: 'https://github.com/Deepanshu9045/react-tutorial',
   },
   {
     title: 'Structure of Universe',
@@ -165,7 +168,7 @@ export const projects: Project[] = [
       'An information-driven page showcasing rich content organization with engaging visual presentation.',
     image: '/images/pro-2.png',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    githubUrl: '#',
+    githubUrl: 'https://github.com/Deepanshu9045/Universe-Structure',
   },
   {
     title: 'Travel India',
@@ -173,7 +176,7 @@ export const projects: Project[] = [
       'A travel-themed project with destination pages, gallery sections, and responsive design for all devices.',
     image: '/images/pro-3.png',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    githubUrl: '#',
+    githubUrl: 'https://github.com/Deepanshu9045/TravelIndia',
   },
   {
     title: 'DSM Design System',
@@ -198,35 +201,20 @@ export const projects: Project[] = [
 
 export const timeline: TimelineItem[] = [
   {
+    title: 'MCA Postgraduate',
+    organization: 'MJPRU University',
+    period: '2024 – 2026',
+    description:
+      'Master of Computer Applications with focus on software engineering, web development, and database systems.',
+    type: 'education',
+  },
+  {
     title: 'BCA Graduate',
     organization: 'MJPRU University',
     period: '2021 – 2024',
     description:
       'Bachelor of Computer Applications with focus on software engineering, web development, and database systems.',
     type: 'education',
-  },
-  {
-    title: 'Intermediate (PCM)',
-    organization: 'Wood Row Senior Secondary School (CBSE)',
-    period: '2020 – 2021',
-    description: 'Completed intermediate with Physics, Chemistry, and Mathematics.',
-    type: 'education',
-  },
-  {
-    title: 'Freelance Web Developer',
-    organization: 'Self-employed',
-    period: '2024 – Present',
-    description:
-      'Building custom web applications for clients using React, Next.js, and Firebase. Focus on CRM tools, dashboards, and business websites.',
-    type: 'experience',
-  },
-  {
-    title: 'Personal Projects & Open Source',
-    organization: 'GitHub',
-    period: '2023 – Present',
-    description:
-      'Actively building and shipping projects — from e-commerce clones to full CRM systems with real-time features.',
-    type: 'experience',
   },
 ]
 

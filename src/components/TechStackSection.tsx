@@ -1,14 +1,84 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Cloud, fetchSimpleIcons, type ICloud, renderSimpleIcon, type SimpleIcon } from 'react-icon-cloud'
 import { techStack, type TechSkill } from '../data/portfolioData'
 
 const categories = ['All', 'Frontend', 'Backend', 'Database', 'Mobile', 'Tools'] as const
 
-const marqueeItems = [
-  'React', '•', 'Next.js', '•', 'TypeScript', '•', 'JavaScript', '•',
-  'HTML', '•', 'CSS', '•', 'Tailwind', '•', 'Node.js', '•',
-  'Firebase', '•', 'MongoDB', '•', 'MySQL', '•', 'Flutter', '•',
-  'Git', '•', 'Docker', '•', 'Java', '•',
+const cloudProps: Omit<ICloud, 'children'> = {
+  containerProps: {
+    style: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
+      paddingBottom: 40,
+    },
+  },
+  options: {
+    reverse: true,
+    depth: 1,
+    wheelZoom: false,
+    imageScale: 2,
+    activeCursor: 'default',
+    tooltip: 'native',
+    initial: [0.1, -0.1],
+    clickToFront: 500,
+    tooltipDelay: 0,
+    outlineColour: '#0000',
+    maxSpeed: 0.04,
+    minSpeed: 0.02,
+  },
+}
+
+const slugs = [
+  'react',
+  'nextdotjs',
+  'typescript',
+  'javascript',
+  'html5',
+  'css3',
+  'tailwindcss',
+  'nodedotjs',
+  'firebase',
+  'mongodb',
+  'mysql',
+  'flutter',
+  'git',
+  'docker',
+  'github',
+  'vercel',
+  'visualstudiocode',
+  'figma',
+  'python',
+  'java',
 ]
+
+function IconCloud() {
+  const [data, setData] = useState<{ simpleIcons: Record<string, SimpleIcon> } | null>(null)
+
+  useEffect(() => {
+    fetchSimpleIcons({ slugs }).then(setData)
+  }, [])
+
+  if (!data) {
+    return <div style={{ minHeight: '300px' }} />
+  }
+
+  const renderedIcons = Object.values(data.simpleIcons).map((icon) =>
+    renderSimpleIcon({
+      icon,
+      size: 42,
+      aProps: {
+        href: undefined,
+        target: undefined,
+        rel: undefined,
+        onClick: (e: any) => e.preventDefault(),
+      },
+    })
+  )
+
+  return <Cloud {...cloudProps}>{renderedIcons}</Cloud>
+}
 
 export function TechStackSection() {
   const [activeFilter, setActiveFilter] = useState<string>('All')
@@ -21,15 +91,9 @@ export function TechStackSection() {
   return (
     <section className="section tech-section" id="tech">
       <div className="container">
-        {/* Scrolling marquee */}
-        <div className="marquee-wrapper">
-          <div className="marquee-track">
-            {[...marqueeItems, ...marqueeItems].map((item, i) => (
-              <span key={i} className={item === '•' ? 'dot' : ''}>
-                {item}
-              </span>
-            ))}
-          </div>
+        {/* Interactive Icon Cloud replacing the scrolling marquee text */}
+        <div style={{ padding: '0 20px', marginBottom: '60px' }}>
+          <IconCloud />
         </div>
 
         <div className="section-header">
