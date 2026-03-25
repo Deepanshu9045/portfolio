@@ -23,6 +23,16 @@ export type Project = {
   githubUrl?: string
 }
 
+export type Certificate = {
+  title: string
+  issuer: string
+  date: string
+  image: string
+  category: 'Web Development' | 'Java' | 'React' | 'Awards'
+  badge?: 'Verified' | 'Winner' | 'Top Performer'
+  link?: string
+}
+
 export type TimelineItem = {
   title: string
   organization: string
@@ -55,7 +65,7 @@ export const profile = {
   location: 'Bareilly, Uttar Pradesh, India',
   email: 'rdeepanshu170@gmail.com',
   phone: '+91 9045744076',
-  avatar: '/images/face pic.png',
+  avatar: '/images/face.png',
   intro:
     'I build modern, responsive web applications with clean code and pixel-perfect design. I am passionate about creating digital experiences that make a difference.',
   about: [
@@ -223,6 +233,74 @@ export const timeline: TimelineItem[] = [
 export const stats: Stat[] = [
   { label: 'Projects Built', value: '10+' },
   { label: 'Technologies', value: '15+' },
-  { label: 'Certificates', value: '7' },
+  { label: 'Certificates', value: '10+' },
   { label: 'Years Coding', value: '3+' },
+]
+
+/* ──────────────────────────  Certifications & Awards  ────────────────────────── */
+
+export const certificates: Certificate[] = [
+  {
+    title: 'Web Development',
+    issuer: 'Udemy',
+    date: 'July 2024',
+    image: '/images/Web Development.jpg',
+    category: 'Web Development',
+    badge: 'Verified',
+  },
+  {
+    title: 'Advanced React Patterns',
+    issuer: 'Frontend Masters',
+    date: 'Jan 2024',
+    image: '/images/cert-2.jpg',
+    category: 'React',
+    badge: 'Top Performer',
+  },
+  {
+    title: 'Java Data Structures & Algorithms',
+    issuer: 'Coursera',
+    date: 'Oct 2023',
+    image: '/images/cert-3.jpg',
+    category: 'Java',
+  },
+  {
+    title: 'Next.js & Serverless',
+    issuer: 'Vercel Academy',
+    date: 'Mar 2024',
+    image: '/images/cert-5.jpg',
+    category: 'Web Development',
+    badge: 'Verified',
+  },
+  {
+    title: 'GoldMedalist 2023',
+    issuer: 'MJPRU University',
+    date: '2023 - 2024',
+    image: '/images/GoldMedalist 2023.jpg',
+    category: 'Awards',
+    badge: 'Winner',
+  },
+  {
+    title: 'GoldMedalist 2024',
+    issuer: 'MJPRU University',
+    date: '2024 - 2025',
+    image: '/images/GoldMedalist 2024.jpg',
+    category: 'Awards',
+    badge: 'Winner',
+  },
+  {
+    title: 'Awarded',
+    issuer: 'MJPRU University',
+    date: '2023',
+    image: '/images/Awarded.jpg',
+    category: 'Awards',
+    badge: 'Winner',
+  },
+  {
+    title: 'Poster Competition',
+    issuer: 'MJPRU University',
+    date: '2022 -2023',
+    image: '/images/Poster Competition.jpg',
+    category: 'Awards',
+    badge: 'Winner',
+  },
 ]

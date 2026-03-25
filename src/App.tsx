@@ -4,7 +4,7 @@ import './App.css'
 import { AboutSection } from './components/AboutSection'
 import { ContactSection } from './components/ContactSection'
 import { ExperienceSection } from './components/ExperienceSection'
-import { GitHubSection } from './components/GitHubSection'
+import { CertificationsSection } from './components/CertificationsSection'
 import { HeroSection } from './components/HeroSection'
 import { Navbar } from './components/Navbar'
 import { ProjectsSection } from './components/ProjectsSection'
@@ -62,7 +62,7 @@ function App() {
         <ProjectsSection />
         <ExperienceSection />
         <ServicesSection />
-        <GitHubSection />
+        <CertificationsSection />
         <ContactSection />
       </main>
 
