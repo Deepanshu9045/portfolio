@@ -1,6 +1,5 @@
 import { useState } from 'react'
-
-import { contactLinks, profile } from '../data/portfolioData'
+import { profile, socials } from '../data/portfolioData'
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -17,10 +16,7 @@ export function ContactSection() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-
-    if (!isValid) {
-      return
-    }
+    if (!isValid) return
 
     const subject = encodeURIComponent(`Portfolio enquiry from ${formData.fullname}`)
     const body = encodeURIComponent(
@@ -31,92 +27,142 @@ export function ContactSection() {
     setSubmitted(true)
   }
 
+  const getSocialIcon = (icon: string) => {
+    switch (icon) {
+      case 'github': return '📦'
+      case 'linkedin': return '💼'
+      case 'twitter': return '🐦'
+      case 'instagram': return '📸'
+      default: return '🔗'
+    }
+  }
+
   return (
-    <div className="section-stack">
-      <section className="panel contact-panel">
-        <div className="section-heading">
-          <p className="eyebrow">Contact</p>
-          <h2>Let&apos;s build something thoughtful</h2>
-          <p>
-            Reach out for freelance work, collaboration, or a portfolio review conversation.
-          </p>
+    <section className="section" id="contact">
+      <div className="container">
+        <div className="section-header">
+          <span className="eyebrow">Contact</span>
+          <h2>Let's Work Together</h2>
+          <p>Have a project in mind? Let's discuss how I can help bring your vision to life.</p>
         </div>
 
-        <div className="contact-layout">
-          <div className="contact-card">
-            {contactLinks.map((item) => (
-              <a
-                key={item.label}
-                className="contact-row"
-                href={item.href}
-                target={item.label === 'Location' ? '_blank' : undefined}
-                rel={item.label === 'Location' ? 'noreferrer' : undefined}
-              >
-                <span className="contact-label">{item.label}</span>
-                <span className="contact-value">{item.value}</span>
-              </a>
-            ))}
-
-            <div className="map-frame">
-              <iframe
-                title="Bareilly map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28091.099697877562!2d79.40400003476564!3d28.34713319963663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a000da1f058f65%3A0x23a3031c2956371e!2sCivil%20Lines%2C%20Bareilly%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1713730962726!5m2!1sen!2sin"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+        <div className="contact-grid">
+          <div className="contact-info">
+            <div className="contact-info-text">
+              <h3>Get in Touch</h3>
+              <p>
+                I'm always open to discussing new projects, creative ideas, or opportunities to
+                be part of your vision. Drop me a message!
+              </p>
             </div>
+
+            <a href={`mailto:${profile.email}`} className="contact-link-card glass-card">
+              <div className="contact-link-icon">📧</div>
+              <div className="contact-link-content">
+                <span className="contact-link-label">Email</span>
+                <span className="contact-link-value">{profile.email}</span>
+              </div>
+            </a>
+
+            <a href="tel:+919045744076" className="contact-link-card glass-card">
+              <div className="contact-link-icon">📱</div>
+              <div className="contact-link-content">
+                <span className="contact-link-label">Phone</span>
+                <span className="contact-link-value">{profile.phone}</span>
+              </div>
+            </a>
+
+            <a
+              href="https://maps.google.com/?q=Bareilly,Uttar Pradesh,India"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-link-card glass-card"
+            >
+              <div className="contact-link-icon">📍</div>
+              <div className="contact-link-content">
+                <span className="contact-link-label">Location</span>
+                <span className="contact-link-value">{profile.location}</span>
+              </div>
+            </a>
+
+            <div className="contact-social-row">
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="contact-social-btn glass-card"
+                  title={social.label}
+                >
+                  {getSocialIcon(social.icon)}
+                </a>
+              ))}
+            </div>
+
+            <a href={profile.resumeUrl} className="btn btn-primary" style={{ width: 'fit-content' }}>
+              📄 Download Resume
+            </a>
           </div>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="input-grid">
-              <label>
-                <span>Full name</span>
-                <input
-                  type="text"
-                  value={formData.fullname}
-                  onChange={(event) =>
-                    setFormData((current) => ({ ...current, fullname: event.target.value }))
+          <div className="contact-form-wrapper glass-card">
+            <h3>Send a Message</h3>
+
+            <form onSubmit={handleSubmit}>
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="contact-name">Full Name</label>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    placeholder="John Doe"
+                    value={formData.fullname}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, fullname: e.target.value }))
+                    }
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="contact-email">Email</label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    placeholder="john@example.com"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, email: e.target.value }))
+                    }
+                  />
+                </div>
+              </div>
+
+              <div className="form-group full">
+                <label htmlFor="contact-message">Message</label>
+                <textarea
+                  id="contact-message"
+                  rows={6}
+                  placeholder="Tell me about your project..."
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, message: e.target.value }))
                   }
                 />
-              </label>
+              </div>
 
-              <label>
-                <span>Email</span>
-                <input
-                  type="email"
-                  value={formData.email}
-                  onChange={(event) =>
-                    setFormData((current) => ({ ...current, email: event.target.value }))
-                  }
-                />
-              </label>
-            </div>
-
-            <label>
-              <span>Message</span>
-              <textarea
-                rows={7}
-                value={formData.message}
-                onChange={(event) =>
-                  setFormData((current) => ({ ...current, message: event.target.value }))
-                }
-              />
-            </label>
-
-            <button className="primary-button" type="submit" disabled={!isValid}>
-              Send message
-            </button>
-
-            {submitted ? (
-              <p className="form-note">
-                Your email app should open with the message prefilled. If it doesn&apos;t, use the email link in the contact card.
-              </p>
-            ) : (
-              <p className="form-note">The button enables once the form looks complete enough to send.</p>
-            )}
-          </form>
+              <div className="form-actions">
+                <button className="btn btn-primary" type="submit" disabled={!isValid}>
+                  Send Message
+                </button>
+                {submitted && (
+                  <p className="form-note">
+                    Your email app should open with the message pre-filled. If it doesn't, use the email link above.
+                  </p>
+                )}
+              </div>
+            </form>
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }

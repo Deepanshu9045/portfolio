@@ -1,80 +1,57 @@
-import { certificates, profile, services, skills } from '../data/portfolioData'
+import { profile } from '../data/portfolioData'
 
 export function AboutSection() {
   return (
-    <div className="section-stack">
-      <section className="hero-panel panel">
-        <div className="hero-copy">
-          <p className="eyebrow">About me</p>
-          <h2>Building polished websites with clear structure and practical thinking.</h2>
-          {profile.about.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+    <section className="section" id="about">
+      <div className="container">
+        <div className="section-header">
+          <span className="eyebrow">About Me</span>
+          <h2>Who I Am</h2>
+          <p>A developer who cares about code quality, user experience, and continuous learning.</p>
         </div>
-        <div className="hero-highlights">
-          <div className="metric-card">
-            <strong>2024</strong>
-            <span>BCA graduate</span>
-          </div>
-          <div className="metric-card">
-            <strong>4+</strong>
-            <span>Core services</span>
-          </div>
-          <div className="metric-card">
-            <strong>7</strong>
-            <span>Certificates earned</span>
-          </div>
-        </div>
-      </section>
 
-      <section className="panel">
-        <div className="section-heading">
-          <p className="eyebrow">What I do</p>
-          <h3>Services</h3>
-        </div>
-        <div className="service-grid">
-          {services.map((service) => (
-            <article key={service.title} className="service-card">
-              <p className="card-kicker">Service</p>
-              <h4>{service.title}</h4>
-              <p>{service.summary}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+        <div className="about-grid">
+          <div className="about-text">
+            {profile.about.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+          </div>
 
-      <section className="panel">
-        <div className="section-heading">
-          <p className="eyebrow">Core skills</p>
-          <h3>Technical focus</h3>
-        </div>
-        <div className="skill-grid">
-          {skills.map((skill) => (
-            <article key={skill.name} className="skill-card">
-              <img src={skill.image} alt={skill.name} />
-              <div>
-                <h4>{skill.name}</h4>
-                <p>{skill.detail}</p>
+          <div className="about-highlights">
+            <div className="about-highlight-card glass-card">
+              <div className="about-highlight-icon">🎯</div>
+              <div className="about-highlight-content">
+                <h4>Clean Code Advocate</h4>
+                <p>I prioritize readable, maintainable code with proper structure and documentation.</p>
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
+            </div>
 
-      <section className="panel">
-        <div className="section-heading">
-          <p className="eyebrow">Certificates</p>
-          <h3>Learning in motion</h3>
+            <div className="about-highlight-card glass-card">
+              <div className="about-highlight-icon">🚀</div>
+              <div className="about-highlight-content">
+                <h4>Performance Focused</h4>
+                <p>Every project is optimized for speed, accessibility, and smooth user interactions.</p>
+              </div>
+            </div>
+
+            <div className="about-highlight-card glass-card">
+              <div className="about-highlight-icon">🎨</div>
+              <div className="about-highlight-content">
+                <h4>Design Thinking</h4>
+                <p>I bridge the gap between design and development with pixel-perfect implementations.</p>
+              </div>
+            </div>
+
+            <div className="about-highlight-card glass-card">
+              <div className="about-highlight-icon">📚</div>
+              <div className="about-highlight-content">
+                <h4>Continuous Learner</h4>
+                <p>Always exploring new tools, frameworks, and best practices to stay current.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="certificate-grid">
-          {certificates.map((certificate) => (
-            <a key={certificate.title} className="certificate-card" href={certificate.href} target="_blank" rel="noreferrer">
-              <img src={certificate.image} alt={certificate.title} />
-              <span>{certificate.title}</span>
-            </a>
-          ))}
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }

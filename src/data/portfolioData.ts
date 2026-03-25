@@ -1,274 +1,240 @@
-export type NavSection = 'about' | 'resume' | 'projects' | 'writing' | 'contact'
+/* ──────────────────────────  Types  ────────────────────────── */
+
+export type TechSkill = {
+  name: string
+  icon: string // SVG inline or emoji fallback
+  level: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert'
+  category: 'Frontend' | 'Backend' | 'Database' | 'Tools' | 'Mobile'
+}
 
 export type Service = {
   title: string
   summary: string
+  icon: string
 }
 
-export type Skill = {
-  name: string
-  detail: string
-  image: string
-}
-
-export type Certificate = {
+export type Project = {
   title: string
+  description: string
   image: string
-  href: string
+  tech: string[]
+  liveUrl?: string
+  demoUrl?: string
+  githubUrl?: string
 }
 
 export type TimelineItem = {
   title: string
+  organization: string
   period: string
-  detail: string
-}
-
-export type Capability = {
-  name: string
-  level: number
-}
-
-export type ProjectCategory = 'all' | 'web design' | 'web development'
-
-export type Project = {
-  title: string
-  category: Exclude<ProjectCategory, 'all'>
-  image: string
-  href: string
   description: string
+  type: 'education' | 'experience'
 }
 
-export type Post = {
-  title: string
-  category: string
-  date: string
-  summary: string
-  image: string
+export type Stat = {
+  label: string
+  value: string
 }
+
+export type SocialLink = {
+  label: string
+  href: string
+  icon: string
+}
+
+/* ──────────────────────────  Profile  ────────────────────────── */
 
 export const profile = {
   name: 'Deepanshu',
-  role: 'Web Developer',
+  roles: [
+    'Full Stack Developer',
+    'Frontend Developer',
+    'Web Developer',
+    'React Developer',
+  ],
   location: 'Bareilly, Uttar Pradesh, India',
   email: 'rdeepanshu170@gmail.com',
   phone: '+91 9045744076',
-  birthday: '2003-10-25',
   avatar: '/src/assets/images/face.png',
   intro:
-    "BCA graduate focused on building clean, useful websites with strong fundamentals in frontend development, problem-solving, and user-friendly design.",
+    'I build modern, responsive web applications with clean code and pixel-perfect design. BCA graduate passionate about creating digital experiences that make a difference.',
   about: [
-    "I'm a recent Bachelor of Computer Applications graduate who enjoys turning ideas into polished digital experiences. I care about clear structure, dependable code, and interfaces that feel easy to use.",
-    "My work blends frontend development, design thinking, and practical implementation. I like simplifying complex problems and shaping them into websites that look professional and communicate clearly.",
+    "I'm a recent Bachelor of Computer Applications graduate who thrives on turning ideas into polished digital products. With a strong foundation in frontend development and growing full-stack capabilities, I craft applications that are both beautiful and functional.",
+    "My approach combines design thinking with practical engineering. I focus on clean architecture, reusable components, and user experiences that feel intuitive. Whether it's a dynamic SPA, a business dashboard, or an API-driven application — I bring the same attention to detail and code quality.",
   ],
+  resumeUrl: '#',
+  githubUsername: 'Deepanshu9045',
 }
 
-export const socials = [
-  { label: 'Freelancer', href: 'https://www.freelancer.in/u/Deepanshu7500' },
-  { label: 'Twitter', href: 'https://twitter.com/dpanshurajput' },
-  { label: 'Instagram', href: 'https://www.instagram.com/dpanshurajput/' },
+/* ──────────────────────────  Social Links  ────────────────────────── */
+
+export const socials: SocialLink[] = [
+  {
+    label: 'GitHub',
+    href: 'https://github.com/Deepanshu9045',
+    icon: 'github',
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/in/deepanshu-rajput',
+    icon: 'linkedin',
+  },
+  {
+    label: 'Twitter',
+    href: 'https://twitter.com/dpanshurajput',
+    icon: 'twitter',
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/dpanshurajput/',
+    icon: 'instagram',
+  },
 ]
+
+/* ──────────────────────────  Tech Stack  ────────────────────────── */
+
+export const techStack: TechSkill[] = [
+  { name: 'React', icon: '⚛️', level: 'Advanced', category: 'Frontend' },
+  { name: 'Next.js', icon: '▲', level: 'Intermediate', category: 'Frontend' },
+  { name: 'TypeScript', icon: '🔷', level: 'Intermediate', category: 'Frontend' },
+  { name: 'JavaScript', icon: '🟨', level: 'Advanced', category: 'Frontend' },
+  { name: 'HTML', icon: '🧱', level: 'Expert', category: 'Frontend' },
+  { name: 'CSS', icon: '🎨', level: 'Advanced', category: 'Frontend' },
+  { name: 'Tailwind CSS', icon: '💨', level: 'Advanced', category: 'Frontend' },
+  { name: 'Node.js', icon: '🟢', level: 'Intermediate', category: 'Backend' },
+  { name: 'Firebase', icon: '🔥', level: 'Advanced', category: 'Backend' },
+  { name: 'MongoDB', icon: '🍃', level: 'Intermediate', category: 'Database' },
+  { name: 'MySQL', icon: '🐬', level: 'Intermediate', category: 'Database' },
+  { name: 'Flutter', icon: '🦋', level: 'Beginner', category: 'Mobile' },
+  { name: 'Git', icon: '📦', level: 'Advanced', category: 'Tools' },
+  { name: 'Docker', icon: '🐳', level: 'Beginner', category: 'Tools' },
+  { name: 'Java', icon: '☕', level: 'Intermediate', category: 'Backend' },
+]
+
+/* ──────────────────────────  Services  ────────────────────────── */
 
 export const services: Service[] = [
   {
-    title: 'Web Design',
-    summary: 'Modern interface design with strong visual hierarchy, clean spacing, and thoughtful presentation.',
-  },
-  {
     title: 'Web Development',
-    summary: 'Responsive websites built with maintainable structure, reusable components, and fast-loading layouts.',
+    summary:
+      'End-to-end web applications built with modern frameworks, optimized for performance and scalability.',
+    icon: '🌐',
   },
   {
-    title: 'Frontend Systems',
-    summary: 'Interactive UI work using HTML, CSS, JavaScript, and modern app structure for smoother iteration.',
+    title: 'Frontend Development',
+    summary:
+      'Pixel-perfect interfaces with React, responsive layouts, smooth animations, and component-driven architecture.',
+    icon: '🎯',
   },
   {
-    title: 'Creative Direction',
-    summary: 'Brand-aware presentation, portfolio storytelling, and polished visual choices that feel intentional.',
+    title: 'Full Stack Development',
+    summary:
+      'Complete solutions from database design to polished UI — APIs, authentication, real-time features, and deployment.',
+    icon: '⚡',
+  },
+  {
+    title: 'UI/UX Design',
+    summary:
+      'Thoughtful user experiences with clean visual design, intuitive navigation, and brand-aware presentation.',
+    icon: '✨',
   },
 ]
 
-export const skills: Skill[] = [
-  {
-    name: 'HTML',
-    image: '/images/html.png',
-    detail: 'Strong semantic structure for accessible, scalable page layouts.',
-  },
-  {
-    name: 'CSS',
-    image: '/images/css.png',
-    detail: 'Comfortable building responsive layouts, card systems, and custom visual design.',
-  },
-  {
-    name: 'JavaScript',
-    image: '/images/js.png',
-    detail: 'Used for interactive UI behavior, component logic, and client-side problem solving.',
-  },
-  {
-    name: 'Java',
-    image: '/images/Javalogo.png',
-    detail: 'Solid foundation in programming logic, OOP concepts, and structured thinking.',
-  },
-]
-
-export const certificates: Certificate[] = [
-  {
-    title: 'C Programming',
-    image: '/images/c.png',
-    href: 'https://www.sololearn.com/certificates/CC-97YFY9DP',
-  },
-  {
-    title: 'Java',
-    image: '/images/java.png',
-    href: 'https://www.sololearn.com/certificates/CC-OFTTVSJ3',
-  },
-  {
-    title: 'C#',
-    image: '/images/c1.png',
-    href: 'https://www.sololearn.com/certificates/CC-MUIVYMVP',
-  },
-  {
-    title: 'Python',
-    image: '/images/python.png',
-    href: 'https://www.sololearn.com/certificates/CC-RPGN1U1A',
-  },
-  {
-    title: 'C++',
-    image: '/images/c++.png',
-    href: 'https://www.sololearn.com/certificates/CC-J0XXVSIX',
-  },
-  {
-    title: 'SQL',
-    image: '/images/sql.png',
-    href: 'https://www.sololearn.com/certificates/CC-JTF5VRU1',
-  },
-  {
-    title: 'Technology Basics',
-    image: '/images/tech.png',
-    href: 'https://www.sololearn.com/certificates/CC-KK7SR896',
-  },
-]
-
-export const education: TimelineItem[] = [
-  {
-    title: 'MJPRU University',
-    period: '2021 - 2024',
-    detail: "Bachelor of Computer Applications (BCA) with focus on software and web fundamentals.",
-  },
-  {
-    title: 'Wood Row Senior Secondary School (CBSE)',
-    period: '2020 - 2021',
-    detail: 'Intermediate with Physics, Chemistry, and Mathematics.',
-  },
-  {
-    title: 'Wood Row Senior Secondary School (CBSE)',
-    period: '2018 - 2019',
-    detail: 'High School curriculum with science, mathematics, language, and social studies.',
-  },
-]
-
-export const experienceHighlights: TimelineItem[] = [
-  {
-    title: 'Programming Languages',
-    period: 'Core foundation',
-    detail: 'Hands-on knowledge of Java, C, C++, and Visual Basic for structured problem-solving.',
-  },
-  {
-    title: 'Web Development',
-    period: 'Frontend focus',
-    detail: 'Experience working with HTML, CSS, JavaScript, and Bootstrap to build responsive pages.',
-  },
-  {
-    title: 'Database Management',
-    period: 'Practical knowledge',
-    detail: 'Comfortable with SQL, MySQL, and SQLite for storing and querying application data.',
-  },
-  {
-    title: 'Software Workflow',
-    period: 'Delivery mindset',
-    detail: 'Familiar with Git, SDLC basics, and iterative project development.',
-  },
-]
-
-export const capabilities: Capability[] = [
-  { name: 'Frontend Development', level: 86 },
-  { name: 'Responsive Web Design', level: 82 },
-  { name: 'Problem Solving', level: 88 },
-  { name: 'Visual Communication', level: 76 },
-]
-
-export const projectCategories: ProjectCategory[] = ['all', 'web design', 'web development']
+/* ──────────────────────────  Projects  ────────────────────────── */
 
 export const projects: Project[] = [
   {
-    title: 'Amazon Clone',
-    category: 'web development',
+    title: 'Zest CRM',
+    description:
+      'A full-featured CRM dashboard with drag-and-drop pipelines, invoice generation, Google OAuth, and real-time Firestore data sync.',
     image: '/images/pro-1.png',
-    href: '#',
-    description: 'A commerce-inspired UI project focused on familiar layout patterns and responsive sections.',
+    tech: ['Next.js', 'TypeScript', 'Firebase', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/Deepanshu9045',
+  },
+  {
+    title: 'Amazon Clone',
+    description:
+      'A commerce-inspired UI project focused on familiar layout patterns, auth flows, and responsive product sections.',
+    image: '/images/pro-1.png',
+    tech: ['React', 'CSS', 'Firebase', 'Node.js'],
+    githubUrl: '#',
   },
   {
     title: 'Structure of Universe',
-    category: 'web development',
+    description:
+      'An information-driven page showcasing rich content organization with engaging visual presentation.',
     image: '/images/pro-2.png',
-    href: '#',
-    description: 'An information-driven page showcasing content organization and engaging presentation.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    githubUrl: '#',
   },
   {
     title: 'Travel India',
-    category: 'web development',
+    description:
+      'A travel-themed project with destination pages, gallery sections, and responsive design for all devices.',
     image: '/images/pro-3.png',
-    href: '#',
-    description: 'A travel-themed project built to present destinations with clear sections and visuals.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    githubUrl: '#',
   },
   {
-    title: 'DSM',
-    category: 'web design',
+    title: 'DSM Design System',
+    description:
+      'A design-focused concept page with strong visual framing, brand-led styling, and modular components.',
     image: '/images/project-5.png',
-    href: '#',
-    description: 'A design-focused concept page with stronger visual framing and brand-led styling.',
+    tech: ['React', 'CSS', 'Figma'],
+    githubUrl: '#',
   },
   {
-    title: 'Background Study',
-    category: 'web design',
-    image: '/images/pro-4.png',
-    href: '#',
-    description: 'A layout exercise centered on visual composition, spacing, and background treatment.',
-  },
-  {
-    title: 'Arrival',
-    category: 'web development',
+    title: 'Portfolio v1',
+    description:
+      'Personal portfolio exploring modern section flows, glassmorphism effects, and landing-page rhythm.',
     image: '/images/project-9.png',
-    href: '#',
-    description: 'A project page exploring section flow, image framing, and modern landing-page rhythm.',
+    tech: ['React', 'TypeScript', 'Vite'],
+    liveUrl: '#',
+    githubUrl: '#',
   },
 ]
 
-export const posts: Post[] = [
+/* ──────────────────────────  Timeline  ────────────────────────── */
+
+export const timeline: TimelineItem[] = [
   {
-    title: 'How I Approach Clean Portfolio Layouts',
-    category: 'Design',
-    date: 'March 2026',
-    summary: 'Thoughts on spacing, clear storytelling, and making a portfolio feel confident instead of cluttered.',
-    image: '/images/blog-1.jpg',
+    title: 'BCA Graduate',
+    organization: 'MJPRU University',
+    period: '2021 – 2024',
+    description:
+      'Bachelor of Computer Applications with focus on software engineering, web development, and database systems.',
+    type: 'education',
   },
   {
-    title: 'Why Simple UI Usually Wins',
-    category: 'Frontend',
-    date: 'February 2026',
-    summary: 'A short note on reducing visual noise and building interfaces people understand quickly.',
-    image: '/images/blog-2.jpg',
+    title: 'Intermediate (PCM)',
+    organization: 'Wood Row Senior Secondary School (CBSE)',
+    period: '2020 – 2021',
+    description: 'Completed intermediate with Physics, Chemistry, and Mathematics.',
+    type: 'education',
   },
   {
-    title: 'Projects That Taught Me the Most',
-    category: 'Learning',
-    date: 'January 2026',
-    summary: 'Lessons from practice work, portfolio experiments, and strengthening development fundamentals.',
-    image: '/images/blog-3.jpg',
+    title: 'Freelance Web Developer',
+    organization: 'Self-employed',
+    period: '2024 – Present',
+    description:
+      'Building custom web applications for clients using React, Next.js, and Firebase. Focus on CRM tools, dashboards, and business websites.',
+    type: 'experience',
+  },
+  {
+    title: 'Personal Projects & Open Source',
+    organization: 'GitHub',
+    period: '2023 – Present',
+    description:
+      'Actively building and shipping projects — from e-commerce clones to full CRM systems with real-time features.',
+    type: 'experience',
   },
 ]
 
-export const contactLinks = [
-  { label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
-  { label: 'Phone', value: profile.phone, href: 'tel:+919045744076' },
-  { label: 'Location', value: profile.location, href: 'https://maps.google.com/?q=Bareilly,Uttar Pradesh,India' },
+/* ──────────────────────────  Stats  ────────────────────────── */
+
+export const stats: Stat[] = [
+  { label: 'Projects Built', value: '10+' },
+  { label: 'Technologies', value: '15+' },
+  { label: 'Certificates', value: '7' },
+  { label: 'Years Coding', value: '3+' },
 ]
