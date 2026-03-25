@@ -55,7 +55,7 @@ export const profile = {
   location: 'Bareilly, Uttar Pradesh, India',
   email: 'rdeepanshu170@gmail.com',
   phone: '+91 9045744076',
-  avatar: '/src/assets/images/face.png',
+  avatar: '/images/face.png',
   intro:
     'I build modern, responsive web applications with clean code and pixel-perfect design. I am passionate about creating digital experiences that make a difference.',
   about: [
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     title: 'Zest CRM',
     description:
       'A full-featured CRM dashboard with drag-and-drop pipelines, invoice generation, Google OAuth, and real-time Firestore data sync.',
-    image: '/src/assets/images/zestcrm.png',
+    image: '/images/zestcrm.png',
     tech: ['Next.js', 'TypeScript', 'Firebase', 'Tailwind CSS'],
     liveUrl: 'https://zestcrm.vercel.app/',
     githubUrl: 'https://github.com/Deepanshu9045/ZestCRM',
@@ -157,7 +157,7 @@ export const projects: Project[] = [
     title: 'React Tutorial',
     description:
       'A react tutorial project focused on learning react and its features. This project is a work in progress.',
-    image: '/src/assets/images/react-tutorial.png',
+    image: '/images/react-tutorial.png',
     tech: ['React', 'CSS', 'Firebase', 'Node.js'],
     liveUrl: 'https://react-tutorial-deepanshu9045.vercel.app/',
     githubUrl: 'https://github.com/Deepanshu9045/react-tutorial',
