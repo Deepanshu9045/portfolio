@@ -55,7 +55,7 @@ export const profile = {
   location: 'Bareilly, Uttar Pradesh, India',
   email: 'rdeepanshu170@gmail.com',
   phone: '+91 9045744076',
-  avatar: '/images/face.png',
+  avatar: '/images/face pic.png',
   intro:
     'I build modern, responsive web applications with clean code and pixel-perfect design. I am passionate about creating digital experiences that make a difference.',
   about: [
