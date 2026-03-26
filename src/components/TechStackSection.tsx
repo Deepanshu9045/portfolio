@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Cloud, fetchSimpleIcons, type ICloud, renderSimpleIcon, type SimpleIcon } from 'react-icon-cloud'
 import { techStack, type TechSkill } from '../data/portfolioData'
 
-const categories = ['All', 'Frontend', 'Backend', 'Database', 'Mobile', 'Tools'] as const
+const categories = [ 'Frontend', 'Backend', 'Database', 'Mobile', 'Tools'] as const
 
 const cloudProps: Omit<ICloud, 'children'> = {
   containerProps: {
@@ -50,7 +50,7 @@ const slugs = [
   'visualstudiocode',
   'figma',
   'python',
-  'java',
+  'openjdk',
 ]
 
 function IconCloud() {
@@ -81,47 +81,50 @@ function IconCloud() {
 }
 
 export function TechStackSection() {
-  const [activeFilter, setActiveFilter] = useState<string>('All')
+  const [activeFilter, setActiveFilter] = useState<string>('Frontend')
 
   const filtered: TechSkill[] =
-    activeFilter === 'All'
+    activeFilter === ''
       ? techStack
       : techStack.filter((t) => t.category === activeFilter)
 
   return (
     <section className="section tech-section" id="tech">
       <div className="container">
-        {/* Interactive Icon Cloud replacing the scrolling marquee text */}
-        <div style={{ padding: '0 20px', marginBottom: '60px' }}>
-          <IconCloud />
-        </div>
-
-        <div className="section-header">
-          <span className="eyebrow">Tech Stack</span>
-          <h2>Technologies I Work With</h2>
-          <p>My toolkit spans the full stack — here's what I build with daily.</p>
-        </div>
-
-        <div className="tech-filter-row">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className={`tech-filter ${activeFilter === cat ? 'active' : ''}`}
-              onClick={() => setActiveFilter(cat)}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        <div className="tech-grid">
-          {filtered.map((skill) => (
-            <div key={skill.name} className="tech-card glass-card">
-              <span className="tech-icon">{skill.icon}</span>
-              <div className="tech-name">{skill.name}</div>
-              <span className={`tech-level ${skill.level}`}>{skill.level}</span>
+        <div className="tech-shell">
+          <div className="tech-content">
+            <div className="section-header tech-header">
+              <span className="eyebrow">Tech Stack</span>
+              <h2>Technologies I Work With</h2>
+              <p>My toolkit spans the full stack and here's what I build with daily.</p>
             </div>
-          ))}
+
+            <div className="tech-filter-row">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  className={`tech-filter ${activeFilter === cat ? 'active' : ''}`}
+                  onClick={() => setActiveFilter(cat)}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            <div className="tech-grid">
+              {filtered.map((skill) => (
+                <div key={skill.name} className="tech-card glass-card">
+                  <span className="tech-icon">{skill.icon}</span>
+                  <div className="tech-name">{skill.name}</div>
+                  <span className={`tech-level ${skill.level}`}>{skill.level}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="tech-cloud">
+            <IconCloud />
+          </div>
         </div>
       </div>
     </section>

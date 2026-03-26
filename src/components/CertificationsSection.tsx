@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { certificates, type Certificate } from '../data/portfolioData'
 
-const categories = ['All', 'Web Development', 'Java', 'React', 'Awards'] as const
+const categories = ['Development', 'Technical', 'Awards'] as const
 
 export function CertificationsSection() {
-  const [activeFilter, setActiveFilter] = useState<string>('All')
+  const [activeFilter, setActiveFilter] = useState<string>('Development')
   const [selectedCert, setSelectedCert] = useState<Certificate | null>(null)
 
   const filtered =

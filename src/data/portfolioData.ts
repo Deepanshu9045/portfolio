@@ -28,7 +28,7 @@ export type Certificate = {
   issuer: string
   date: string
   image: string
-  category: 'Web Development' | 'Java' | 'React' | 'Awards'
+  category: 'Development' | 'Technical' | 'Awards' 
   badge?: 'Verified' | 'Winner' | 'Top Performer'
   link?: string
 }
@@ -242,35 +242,44 @@ export const stats: Stat[] = [
 export const certificates: Certificate[] = [
   {
     title: 'Web Development',
-    issuer: 'Udemy',
+    issuer: 'Sololearn',
     date: 'July 2024',
     image: '/images/Web Development.jpg',
-    category: 'Web Development',
+    category: 'Development',
     badge: 'Verified',
   },
   {
-    title: 'Advanced React Patterns',
-    issuer: 'Frontend Masters',
-    date: 'Jan 2024',
-    image: '/images/cert-2.jpg',
-    category: 'React',
+    title: 'PostgreSQL Fundamentals',
+    issuer: 'Amazon Web Services',
+    date: 'Mar 2026',
+    image: '/images/PostgreSQL.png',
+    category: 'Development',
+    badge: 'Verified',
+  },  
+  {
+    title: 'Professional Exposure',
+    issuer: 'ISO 9001 Foundation - Quality Certification',
+    date: 'Mar 2026',
+    image: '/images/PROFESSIONAL EXPOSURE.png',
+    category: 'Technical',
     badge: 'Top Performer',
   },
   {
-    title: 'Java Data Structures & Algorithms',
-    issuer: 'Coursera',
-    date: 'Oct 2023',
-    image: '/images/cert-3.jpg',
-    category: 'Java',
-  },
-  {
-    title: 'Next.js & Serverless',
-    issuer: 'Vercel Academy',
-    date: 'Mar 2024',
-    image: '/images/cert-5.jpg',
-    category: 'Web Development',
+    title: 'AWS Fundamental',
+    issuer: 'Amazon Web Services',
+    date: 'Mar 2026',
+    image: '/images/AWSFundamental.png',
+    category: 'Technical',
     badge: 'Verified',
-  },
+  },  
+  {
+    title: 'AWS System Manager',
+    issuer: 'Amazon Web Services',
+    date: 'Mar 2026',
+    image: '/images/SystemManager.png',
+    category: 'Technical',
+    badge: 'Verified',
+  },  
   {
     title: 'GoldMedalist 2023',
     issuer: 'MJPRU University',
