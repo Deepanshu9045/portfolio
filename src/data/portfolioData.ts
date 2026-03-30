@@ -181,11 +181,12 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/Deepanshu9045/Universe-Structure',
   },
   {
-    title: 'Travel India',
+    title: 'Travel India', 
     description:
       'A travel-themed project with destination pages, gallery sections, and responsive design for all devices.',
-    image: '/images/pro-3.png',
+    image: '/images/TravellIndia.png',
     tech: ['HTML', 'CSS', 'JavaScript'],
+    liveUrl: 'https://travel-india-ivory.vercel.app/',
     githubUrl: 'https://github.com/Deepanshu9045/TravelIndia',
   },
   {
