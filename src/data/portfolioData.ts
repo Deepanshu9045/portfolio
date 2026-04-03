@@ -189,14 +189,14 @@ export const projects: Project[] = [
     liveUrl: 'https://travel-india-ivory.vercel.app/',
     githubUrl: 'https://github.com/Deepanshu9045/TravelIndia',
   },
-  {
-    title: 'DSM Design System',
-    description:
-      'A design-focused concept page with strong visual framing, brand-led styling, and modular components.',
-    image: '/images/project-5.png',
-    tech: ['React', 'CSS', 'Figma'],
-    githubUrl: '#',
-  },
+{
+  title: 'MindMetrics',
+  description:
+    'An interactive assessment platform featuring IQ, EQ, and SQ tests with multiple-choice questions, score calculation, and result-based feedback for users.',
+  image: '/images/MindMatrics.png',
+  tech: ['Laravel', 'PHP', 'Blade', 'SQLite'],
+  githubUrl: 'https://github.com/Deepanshu9045/MindMetrics',
+},
   {
     title: 'Portfolio v1',
     description:
