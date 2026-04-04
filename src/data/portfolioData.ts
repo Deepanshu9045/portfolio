@@ -17,6 +17,7 @@ export type Project = {
   title: string
   description: string
   image: string
+  category: 'Big Project' | 'Small Project'
   tech: string[]
   liveUrl?: string
   demoUrl?: string
@@ -58,7 +59,7 @@ export const profile = {
   name: 'Deepanshu',
   roles: [
     'Full Stack Developer',
-    'Frontend Developer',
+    'Software Developer',
     'Web Developer',
     'React Developer',
   ],
@@ -107,6 +108,8 @@ export const socials: SocialLink[] = [
 export const techStack: TechSkill[] = [
   { name: 'React', icon: '⚛️', level: 'Advanced', category: 'Frontend' },
   { name: 'Next.js', icon: '▲', level: 'Intermediate', category: 'Frontend' },
+  { name: 'Laravel', icon: '🌿', level: 'Intermediate', category: 'Backend' },
+  { name: 'PHP', icon: '🐘', level: 'Intermediate', category: 'Backend' },
   { name: 'TypeScript', icon: '🔷', level: 'Intermediate', category: 'Frontend' },
   { name: 'JavaScript', icon: '🟨', level: 'Advanced', category: 'Frontend' },
   { name: 'HTML', icon: '🧱', level: 'Expert', category: 'Frontend' },
@@ -116,6 +119,7 @@ export const techStack: TechSkill[] = [
   { name: 'Firebase', icon: '🔥', level: 'Advanced', category: 'Backend' },
   { name: 'MongoDB', icon: '🍃', level: 'Intermediate', category: 'Database' },
   { name: 'MySQL', icon: '🐬', level: 'Intermediate', category: 'Database' },
+  { name: 'PostgreSQL', icon: '🐘', level: 'Beginner', category: 'Database' },
   { name: 'Flutter', icon: '🦋', level: 'Beginner', category: 'Mobile' },
   { name: 'Git', icon: '📦', level: 'Advanced', category: 'Tools' },
   { name: 'Docker', icon: '🐳', level: 'Beginner', category: 'Tools' },
@@ -159,6 +163,7 @@ export const projects: Project[] = [
     description:
       'A full-featured CRM dashboard with drag-and-drop pipelines, invoice generation, Google OAuth, and real-time Firestore data sync.',
     image: '/images/zestcrm.png',
+    category: 'Big Project',
     tech: ['Next.js', 'TypeScript', 'Firebase', 'Tailwind CSS'],
     liveUrl: 'https://zestcrm.vercel.app/',
     githubUrl: 'https://github.com/Deepanshu9045/ZestCRM',
@@ -168,6 +173,7 @@ export const projects: Project[] = [
     description:
       'A react tutorial project focused on learning react and its features. This project is a work in progress.',
     image: '/images/react-tutorial.png',
+    category: 'Big Project',
     tech: ['React', 'CSS', 'Firebase', 'Node.js'],
     liveUrl: 'https://react-tutorial-deepanshu9045.vercel.app/',
     githubUrl: 'https://github.com/Deepanshu9045/react-tutorial',
@@ -177,6 +183,7 @@ export const projects: Project[] = [
     description:
       'An information-driven page showcasing rich content organization with engaging visual presentation.',
     image: '/images/pro-2.png',
+    category: 'Small Project',
     tech: ['HTML', 'CSS', 'JavaScript'],
     githubUrl: 'https://github.com/Deepanshu9045/Universe-Structure',
   },
@@ -185,6 +192,7 @@ export const projects: Project[] = [
     description:
       'A travel-themed project with destination pages, gallery sections, and responsive design for all devices.',
     image: '/images/TravellIndia.png',
+    category: 'Small Project',
     tech: ['HTML', 'CSS', 'JavaScript'],
     liveUrl: 'https://travel-india-ivory.vercel.app/',
     githubUrl: 'https://github.com/Deepanshu9045/TravelIndia',
@@ -194,17 +202,18 @@ export const projects: Project[] = [
   description:
     'An interactive assessment platform featuring IQ, EQ, and SQ tests with multiple-choice questions, score calculation, and result-based feedback for users.',
   image: '/images/MindMatrics.png',
+  category: 'Big Project',
   tech: ['Laravel', 'PHP', 'Blade', 'SQLite'],
   githubUrl: 'https://github.com/Deepanshu9045/MindMetrics',
 },
   {
-    title: 'Portfolio v1',
+    title: 'Pretext Draggable Circle',
     description:
-      'Personal portfolio exploring modern section flows, glassmorphism effects, and landing-page rhythm.',
-    image: '/images/project-9.png',
+      'A draggable circle component built with React and TypeScript, demonstrating interactive UI elements and state management.',
+    image: '/images/pretext.png',
+    category: 'Small Project',
     tech: ['React', 'TypeScript', 'Vite'],
-    liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/Deepanshu9045/pretext-draggable-circle',
   },
 ]
 
